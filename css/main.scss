@@ -1,0 +1,181 @@
+/* Crafted with love by wolfcreative.ru :3 */
+@font-face{font-family:'PT Sans';src:local('PT Sans'),local(PTSans-Regular),url(../fonts/ptsans.woff2) format("woff2"),url(../fonts/ptsans.woff) format("woff"),url(../fonts/ptsans.ttf) format("truetype");font-weight:400;font-style:normal}
+@font-face{font-family:'PT Sans';src:local('PT Sans Bold'),local(PTSans-Bold),url(../fonts/ptsansbold.woff2) format("woff2"),url(../fonts/ptsansbold.woff) format("woff"),url(../fonts/ptsansbold.ttf) format("truetype");font-weight:700;font-style:normal}
+@font-face{font-family:'Gilroy Bold';src:url(../fonts/Gilroy-Bold.eot);src:url(../fonts/Gilroy-Bold.eot?#iefix) format("embedded-opentype"),url(../fonts/Gilroy-Bold.woff) format("woff"),url(../fonts/Gilroy-Bold.ttf) format("truetype");font-weight:400;font-style:normal}
+@font-face{font-family:'Gilroy Semibold';src:url(../fonts/Gilroy-SemiBold.eot);src:url(../fonts/Gilroy-SemiBold.eot?#iefix) format("embedded-opentype"),url(../fonts/Gilroy-SemiBold.woff) format("woff"),url(../fonts/Gilroy-SemiBold.ttf) format("truetype");font-weight:400;font-style:normal}
+
+// Set Default
+%container-padding{
+    padding:50px 0 65px;
+    @media (max-width:959px){padding:30px 0 40px}
+}
+
+$color-green:#8bd529;
+$color-lightgreen:#afc137;
+
+$font-bold:'Gilroy Bold',sans-serif;
+$font-semibold:'Gilroy Semibold',sans-serif;
+$font-ptsans:'PT Sans',sans-serif;
+
+// Main CSS
+html{background:url(../img/backgrounds/main.jpg) center}
+body{
+    background:url(../img/backgrounds/top.jpg) no-repeat top center;
+    margin:0 auto;font-family:'PT Sans',sans-serif;font-size:16px;line-height:normal;color:#dce7ec;
+    @media (max-width:959px){font-size:14px;line-height:22px}
+}
+.uk-container{max-width:970px}
+a{color:$color-green;transition:.2s ease-in-out}
+a:hover,a:focus{color:lighten($color-green,14%);text-decoration:none;transition:.2s ease-in-out}
+sup{font-size:11px}
+
+.header{
+    background:url(../img/backgrounds/header.jpg) no-repeat center / cover;position:relative;padding-bottom:100px;overflow:hidden;
+    @media (max-width:860px){padding-bottom:70px}
+
+    header{
+        background:transparent url(../img/backgrounds/header_line.png) no-repeat bottom center;padding-bottom:1px;
+        @media (max-width:639px){
+            >.uk-container{padding:0}
+            .logo{padding-top:15px}
+        }
+
+        .uk-navbar-nav{
+            @media (max-width:1199px) and (min-width:960px){margin-left:-15px}
+
+            >li{
+                position:relative;
+                &:after{content:'';height:48px;border-left:1px solid rgba(#34505f, 0.6);border-right:1px solid rgba(#162e39, 0.8);position:absolute;top:0;right:0;z-index:3}
+
+                >a{
+                    min-height:48px;color:#dadbdc;font:bold 15px $font-ptsans;text-transform:none;padding:0 29px 0 27px;
+                    &:hover,&:focus{background:#343434}
+                }
+            }
+        }
+
+        .uk-navbar-toggle{color:#f1f1f1}
+        .uk-button{@media(max-width:359px){background:transparent!important;padding:0 15px}}
+
+        // Если липкое-меню активно
+        &.uk-active{
+            background:rgba(255,255,255,0.95);box-shadow:0 7px 10px -5px rgba(0,0,0,.1);
+
+            .logo{display:none}
+
+            .uk-navbar-nav>li>a{
+                color:#111;
+                &:hover,&:focus{background:#fff}
+            }
+
+            .uk-button,.uk-navbar-toggle{color:$color-green}
+
+            .uk-button{
+                &:hover,&:focus{color:#fff;background:$color-green}
+            }
+        }
+    }
+
+    .info{
+        max-height:170px;height:170px;box-sizing:border-box;padding:10px 15px 0;
+
+        .limited{
+            width:232px;
+
+            .phone{
+                font:16px $font-bold;color:#fff;
+
+                &.large{
+                    font-size:24px;
+                    span{font-size:18px;color:$color-green}
+                }
+            }
+            
+            .uk-link-green{
+                line-height:30px;
+                img{display:inline-block;margin-right:5px;vertical-align:top;margin-top:4px}
+            }
+        }
+        
+        p{
+            font:16px $font-bold;margin-top:25px;color:#fff;
+            @media (max-width:959px){font-size:20px;margin-top:15px}
+            @media (max-width:639px){font-size:18px}
+        }
+    }
+
+    .uk-search{
+        width:223px;
+
+        input[type=search]{
+            height: 30px;font-size: 14px;background:#0a212d;border:none;padding:5px 35px 5px 15px;border-radius:4px;border-bottom: 1px solid #254252;color:#f1f1f1;
+
+        }
+    }
+}
+
+.main{overflow:hidden}
+
+
+// Headers
+h1,h2,h3,h4,.uk-h1{font-family:'Gilroy Bold',sans-serif;line-height:normal;color:#111}
+h1,.uk-h1{
+    font-size:48px;line-height:1.2;color:#fff;
+    @media(max-width:959px){font-size:43px}
+    @media(max-width:639px){font-size:34px;line-height:normal}
+    @media(max-width:439px){font-size:30px}
+}
+h2{
+    font-size:36px;
+    @media(max-width:959px){font-size:30px}
+    @media(max-width:639px){font-size:26px}
+    span{color:$color-lightgreen;font-style:italic}
+}
+h3,h4{
+    font-size:24px;
+    @media(max-width:959px){font-size:22px}
+    @media(max-width:639px){font-size:20px}
+    span{color:$color-lightgreen;font-style:italic}
+}
+
+// Buttons
+.uk-button{
+    border-radius:100px;text-transform:none;
+
+    &.uk-button-ghost {
+        background:transparent url(../img/awesome/phone-ghost.png) no-repeat left 10px center;color:#fff;font:14px/36px 'Gilroy Bold',sans-serif;border:1px solid $color-green;padding:0 15px 0 48px;
+        &:hover,&:focus{background:rgba(255,255,255,.1);color:#fff}
+    }
+    &.uk-button-green{
+        background:linear-gradient(to bottom, #a0a965 0%,$color-green 100%);border-bottom:4px solid #7a862f;color:#fff;font-family:'Gilroy Bold',sans-serif;
+        box-shadow:0px 4px 0px 0px rgba(122, 134, 47, 0.004),0px 11px 46px 0px rgba(149, 161, 71, 0.39),inset 0px 12px 21px 0px rgba(196, 208, 119, 0.4);
+        &:hover,&:focus{background:linear-gradient(to bottom, $color-green 0%,#a0a965 100%);color:#fff}
+    }
+
+    &.uk-button-medium{
+        font-size:20px;line-height:54px;padding:0 64px;
+        @media(max-width:1279px){padding:0 40px}
+        @media(max-width:959px){font-size:18px;line-height:48px}
+        @media(max-width:439px){padding:0 20px}
+   }
+    &.uk-button-large{
+        font:24px/71px 'Gilroy Bold',sans-serif;
+        @media(max-width:959px){font-size:18px;line-height:48px}
+        @media(max-width:439px){padding:0 20px}
+   }
+}
+
+.uk-link{
+    font:bold 18px $font-ptsans;display:inline-block;
+    &:hover,&:focus{text-decoration:none}
+
+    &.uk-link-green{
+        color:$color-green;
+        &:hover,&:focus{color:lighten($color-green,25%)}
+    }
+}
+
+// UiKit Replace
+.uk-input{height:48px;border-radius:4px}
+.uk-lightbox{background:rgba(0, 0, 0, 0.9)}
+.uk-modal-title{font-size:26px}
