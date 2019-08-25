@@ -46,7 +46,7 @@ sup{font-size:11px}
             .uk-navbar-nav{
                 >li{
                     position:relative;
-                    &:after{content:'';height:48px;border-left:1px solid rgba(#34505f,0.6);border-right:1px solid rgba(#162e39,0.8);position:absolute;top:0;right:0;z-index:3}
+                    &:after{content:'';height:48px;border-left:1px solid rgba(#34505f, 0.6);border-right:1px solid rgba(#162e39, 0.8);position:absolute;top:0;right:0;z-index:3}
                     &:hover{&:after{border-left-color:transparent}}
 
                     >a{
@@ -67,7 +67,7 @@ sup{font-size:11px}
                             color:#555;
                             padding:0 20px 1px;font:bold 16px/52px $font-ptsans;
 
-                            &:hover,&:focus{background:$color-green;color:#fff}
+                            &:hover,&:focus{background:darken($color-green,10%);color:#fff}
                         }
                     }
                 }
@@ -132,7 +132,7 @@ sup{font-size:11px}
 .main{overflow:hidden}
 
 .content{
-    .blocks_basicly{
+    .blocks_basicly,.blocks_news{
         a{
             font-size:14px;color:#b9cfd9;
 
@@ -151,6 +151,22 @@ sup{font-size:11px}
                 }
 
                 .link{color:$color-green}
+            }
+        }
+    }
+
+    .blocks_news{
+        a{
+            img{
+                @media(min-width:640px){max-width:300px}
+                @media(max-width:1099px) and (min-width:960px){max-width:270px}
+            }
+            
+            .image:after{display:none}
+
+            h2{
+                font-size:22px;
+                @media(max-width:639px){font-size:18px}
             }
         }
     }
@@ -227,16 +243,16 @@ footer{
         .uk-text-muted{color:#f7f7f7!important}
     }
 
-    .uk-modal-header{background:darken($color-darkblue,7%);border-bottom-color:darken($color-darkblue,15%)}
+    .uk-modal-header{background:darken($color-darkblue, 7%);border-bottom-color:darken($color-darkblue, 15%)}
 } 
 
 // Headers
 h1,h2,h3,h4,.uk-h1{font-family:'Gilroy Bold',sans-serif;line-height:normal;color:#8dc63f}
 h1,.uk-h1{
-    font-size:48px;line-height:1.2;color:#fff;
-    @media(max-width:959px){font-size:43px}
-    @media(max-width:639px){font-size:34px;line-height:normal}
-    @media(max-width:439px){font-size:30px}
+    font-size:38px;line-height:1.2;color:#fff;
+    @media(max-width:959px){font-size:34px}
+    @media(max-width:639px){font-size:28px;line-height:normal}
+    @media(max-width:439px){font-size:24px}
 }
 h2{
     font-size:18px;line-height:21px;
@@ -254,8 +270,8 @@ h3,h4{
     border-radius:4px;text-transform:none;
 
     &.uk-button-green{
-        background:darken($color-green,10%);border-bottom:4px solid darken($color-green,25%);color:#fff;font-family:'Gilroy Bold',sans-serif;
-        &:hover,&:focus{background:darken($color-green,14%);color:#fff}
+        background:darken($color-green, 10%);border-bottom:4px solid darken($color-green, 25%);color:#fff;font-family:'Gilroy Bold',sans-serif;
+        &:hover,&:focus{background:darken($color-green, 14%);color:#fff}
     }
 
     &.uk-button-medium{
@@ -283,5 +299,5 @@ h3,h4{
 
 // UiKit Replace
 .uk-input{height:48px;border-radius:4px}
-.uk-lightbox{background:rgba(0,0,0,0.9)}
+.uk-lightbox{background:rgba(0, 0, 0, 0.9)}
 .uk-modal-title{font-size:26px}
