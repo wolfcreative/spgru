@@ -12,6 +12,7 @@
 
 $color-green:#8bd529;
 $color-lightgreen:#afc137;
+$color-darkblue:#244355;
 
 $font-bold:'Gilroy Bold',sans-serif;
 $font-semibold:'Gilroy Semibold',sans-serif;
@@ -37,7 +38,7 @@ sup{font-size:11px}
         @media(max-width:1050px){>.uk-container{padding:0}}
         
         .uk-navbar{
-            background:#244355;border-radius:2px 2px 3px 3px;border-bottom:3px solid $color-green;box-shadow:0 12px 9px -7px rgba(0,0,0,0.5);
+            background:$color-darkblue;border-radius:2px 2px 3px 3px;border-bottom:3px solid $color-green;box-shadow:0 12px 9px -7px rgba(0,0,0,0.5);
             @media(max-width:1050px){padding:0 40px}
             @media(max-width:959px){padding:0 20px;box-shadow:none}
             @media(max-width:639px){padding:0 3px}
@@ -45,7 +46,7 @@ sup{font-size:11px}
             .uk-navbar-nav{
                 >li{
                     position:relative;
-                    &:after{content:'';height:48px;border-left:1px solid rgba(#34505f, 0.6);border-right:1px solid rgba(#162e39, 0.8);position:absolute;top:0;right:0;z-index:3}
+                    &:after{content:'';height:48px;border-left:1px solid rgba(#34505f,0.6);border-right:1px solid rgba(#162e39,0.8);position:absolute;top:0;right:0;z-index:3}
                     &:hover{&:after{border-left-color:transparent}}
 
                     >a{
@@ -54,6 +55,20 @@ sup{font-size:11px}
 
                         @media(max-width:1199px){padding:0 29px 0 27px}
                         @media(max-width:1099px){padding:0 19px 0 17px}
+                    }
+                }
+                .uk-navbar-dropdown{
+                    padding:0;
+
+                    >ul>li{
+                        padding:0;margin:0;
+
+                        >a{
+                            color:#555;
+                            padding:0 20px 1px;font:bold 16px/52px $font-ptsans;
+
+                            &:hover,&:focus{background:$color-green;color:#fff}
+                        }
                     }
                 }
             }
@@ -66,9 +81,9 @@ sup{font-size:11px}
 
         // Если липкое-меню активно
         &.uk-active{
-            background:#244355;box-shadow:0 7px 10px -5px rgba(0,0,0,.1);
+            background:$color-darkblue;box-shadow:0 7px 10px -5px rgba(0,0,0,.1);
 
-            .uk-navbar{background:#244355;border-radius:0;box-shadow:0 12px 9px -3px rgba(0,0,0,0.5)}
+            .uk-navbar{background:$color-darkblue;border-radius:0;box-shadow:0 12px 9px -3px rgba(0,0,0,0.5)}
         }
     }
 
@@ -148,8 +163,8 @@ sup{font-size:11px}
 
             i{
                 width:48px;height:48px;background:url(../img/awesome/urls-1.png) no-repeat center / contain;display:block;
-                &.two{background-image:url(../img/awesome/urls-2.png)}
-                &.three{background-image:url(../img/awesome/urls-3.png)}
+                &.two{background-image:url(../img/awesome/urls-3.png)}
+                &.three{background-image:url(../img/awesome/urls-2.png)}
             }
 
             span{color:#f3f3f3;font-size:15px}
@@ -204,6 +219,16 @@ footer{
     }
 }
 
+// Modal
+.uk-modal{
+    .uk-modal-dialog{
+        background:$color-darkblue;
+        
+        .uk-text-muted{color:#f7f7f7!important}
+    }
+
+    .uk-modal-header{background:darken($color-darkblue,7%);border-bottom-color:darken($color-darkblue,15%)}
+} 
 
 // Headers
 h1,h2,h3,h4,.uk-h1{font-family:'Gilroy Bold',sans-serif;line-height:normal;color:#8dc63f}
@@ -226,16 +251,11 @@ h3,h4{
 
 // Buttons
 .uk-button{
-    border-radius:100px;text-transform:none;
+    border-radius:4px;text-transform:none;
 
-    &.uk-button-ghost {
-        background:transparent url(../img/awesome/phone-ghost.png) no-repeat left 10px center;color:#fff;font:14px/36px 'Gilroy Bold',sans-serif;border:1px solid $color-green;padding:0 15px 0 48px;
-        &:hover,&:focus{background:rgba(255,255,255,.1);color:#fff}
-    }
     &.uk-button-green{
-        background:linear-gradient(to bottom, #a0a965 0%,$color-green 100%);border-bottom:4px solid #7a862f;color:#fff;font-family:'Gilroy Bold',sans-serif;
-        box-shadow:0px 4px 0px 0px rgba(122, 134, 47, 0.004),0px 11px 46px 0px rgba(149, 161, 71, 0.39),inset 0px 12px 21px 0px rgba(196, 208, 119, 0.4);
-        &:hover,&:focus{background:linear-gradient(to bottom, $color-green 0%,#a0a965 100%);color:#fff}
+        background:darken($color-green,10%);border-bottom:4px solid darken($color-green,25%);color:#fff;font-family:'Gilroy Bold',sans-serif;
+        &:hover,&:focus{background:darken($color-green,14%);color:#fff}
     }
 
     &.uk-button-medium{
@@ -263,5 +283,5 @@ h3,h4{
 
 // UiKit Replace
 .uk-input{height:48px;border-radius:4px}
-.uk-lightbox{background:rgba(0, 0, 0, 0.9)}
+.uk-lightbox{background:rgba(0,0,0,0.9)}
 .uk-modal-title{font-size:26px}
